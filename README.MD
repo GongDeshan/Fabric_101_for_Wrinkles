@@ -5,7 +5,6 @@
 **A comprehensive fabric dataset and a differentiable cloth simulator for learning persistent wrinkle formation.**
 
 [![SIGGRAPH Asia 2026](https://img.shields.io/badge/SIGGRAPH%20Asia-2026-ff69b4?style=for-the-badge)](https://asia.siggraph.org/2026/)
-[![Paper](https://img.shields.io/badge/Paper-ACM%20TOG-blue?style=for-the-badge)](https://doi.org/YOUR_DOI)
 [![arXiv](https://img.shields.io/badge/arXiv-2609.13707-b31b1b?style=for-the-badge)](https://arxiv.org/abs/2609.13707)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Data & Code](https://img.shields.io/badge/Data%20%26%20Code-Coming%20Soon-orange?style=for-the-badge)](#data--code-release)
@@ -22,7 +21,7 @@
 
 Persistent wrinkles are everywhere in real garments, yet they remain one of the hardest phenomena to reproduce in cloth simulation. Existing methods either rely on hand-tuned parameters or lack the data needed to drive physically meaningful models.
 
-This repository hosts the official implementation of our SIGGRAPH Asia 2026 paper:
+This repository hosts the official implementation of our paper, to appear in ACM Transactions on Graphics (SIGGRAPH Asia 2026):
 
 > **Learnable Persistent Wrinkle Formation in Cloth Simulation**
 > Deshan Gong, Ningtao Mao, Xiaoyuan Yang, Xinyu Lu, He Wang, Taku Komura
@@ -31,8 +30,8 @@ We make two contributions:
 
 | | Contribution | Description |
 |---|---|---|
-| 1 | **Fabric-101** | The first inclusive, accurate, extendable, and open-source fabric dataset for persistent wrinkle simulation — 101 fabrics + 4 papers, spanning diverse fibers, weaves, and post-processing treatments. |
-| 2 | **Differentiable Simulator** | The first differentiable cloth simulator that jointly models internal friction and elasto-plasticity, learning fabric parameters directly from measured hysteresis curves. |
+| 1 | **Fabric-101** | An inclusive, accurate, extendable, and open-source fabric dataset for persistent wrinkle simulation — 101 fabrics + 4 papers, spanning diverse fibers, weaves, and post-processing treatments. |
+| 2 | **Differentiable Simulator** | A differentiable cloth simulator that jointly models internal friction and elasto-plasticity, learning fabric parameters directly from measured hysteresis curves. |
 
 ---
 
@@ -40,9 +39,9 @@ We make two contributions:
 
 - **Learnable from data** — No manual parameter tuning. Our adjoint-based optimizer fits fabric parameters directly to cyclic loading–unloading curves.
 - **Friction + plasticity** — The first differentiable simulator to jointly model both, capturing the full spectrum from soft recoverable folds to sharp permanent creases.
-- **Generalizes across geometries** — Parameters learned from small cylindrical samples transfer to full garments and to Cusick drape.
+- **Generalizes across geometries** — Parameters learned from small cylindrical samples transfer to full garments.
 - **Validated on real fabrics** — Cotton, linen, wool, silk, PET, and even paper.
-- **Fully open-source (coming soon)** — The complete dataset and simulator code will be released publicly.
+- **Fully open-source (coming soon)** — The complete dataset, simulator code, and pretrained parameters will be released publicly.
 
 ---
 
