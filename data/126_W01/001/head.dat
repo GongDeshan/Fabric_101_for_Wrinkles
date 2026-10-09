@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            126_W01_001
+ProductName            W01
+test ID                126
+Weight(gsm)            191.9
+Thickness(mm)          0.4
+Comment                Worsted Gabardine
+band_Type              1
+Test Date              15/5/2026
+Test Time              13:46:56
+Operator               Xiaoyuan
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0

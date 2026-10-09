@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            1006_S02_001
+ProductName            S02
+test ID                1006
+Weight(gsm)            92.03
+Thickness(mm)          0.3
+Comment                Silk Crepe de Chine
+band_Type              1
+Test Date              12/8/2026
+Test Time              15:40:05
+Operator               Xiaoyuan
+MachineID              12847
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              Woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.txt
+0
+0
+15.0
+1
+20.0
+0
+
+0

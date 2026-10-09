@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            119_C10_001
+ProductName            C10
+test ID                119
+Weight(gsm)            229.16
+Thickness(mm)          1.5
+Comment                Cotton Velveteen
+band_Type              1
+Test Date              15/5/2026
+Test Time              10:43:51
+Operator               Xiaoyuan
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0

@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            111_C02_001
+ProductName            C02
+test ID                111
+Weight(gsm)            108.07
+Thickness(mm)          0.2
+Comment                Cotton Poplin
+band_Type              1
+Test Date              07/5/2026
+Test Time              17:03:06
+Operator               Xiaoyuan
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0

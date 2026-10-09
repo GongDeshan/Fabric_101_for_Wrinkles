@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            124_L02_001
+ProductName            L02
+test ID                124
+Weight(gsm)            136.97
+Thickness(mm)          0.5
+Comment                Dew Retting Linen
+band_Type              1
+Test Date              08/5/2026
+Test Time              19:30:24
+Operator               Xiaoyuan
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0

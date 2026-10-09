@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            110_C01_002
+ProductName            C01
+test ID                110
+Weight(gsm)            134.85
+Thickness(mm)          0.7
+Comment                Cotton Plain
+band_Type              1
+Test Date              07/5/2026
+Test Time              16:33:15
+Operator               Xiaoyuan
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0

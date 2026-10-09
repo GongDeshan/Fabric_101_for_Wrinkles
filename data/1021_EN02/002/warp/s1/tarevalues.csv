@@ -1,0 +1,40 @@
+**Before Loading Tare values**
+
+Load,0.0658989995718002
+Torque,-0.00735200010240078
+Load (N),3.22366339775894
+Torque (N),0.0193260647791772
+
+**After Loading**
+
+Load,-1.34801503684428
+Torque,0.00710006885770851
+
+**After Pretension**
+
+Load,-0.5075996,N
+Torque,3.41725E-05,N-m
+pret_moved,-0.20146484375,mm
+Goal force,0.5,N
+
+**After Twist**
+
+Load RAW,0.022371
+Torque RAW,0.008422
+Load,0.132299955864239,N
+Torque,-0.0414648190979571,N-m
+
+**After Compression**
+
+Load RAW,0.012394
+Torque RAW,0.002142
+Load,-0.355757365094785,N
+Torque,-0.024956700036829,N-m
+
+**After Friction**
+
+Load RAW,0.019893
+Torque RAW,-0.007254
+Load,0.0110805560039657,N
+Torque,-0.000257611499467134,N-m
+

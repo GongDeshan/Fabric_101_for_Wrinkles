@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            1015_EF01_001
+ProductName            EF01
+test ID                1015
+Weight(gsm)            41.9
+Thickness(mm)          0.1
+Comment                Coated Nylon
+band_Type              1
+Test Date              13/8/2026
+Test Time              12:18:01
+Operator               Xiaoyuan
+MachineID              12847
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              Woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.txt
+0
+0
+15.0
+1
+20.0
+0
+
+0

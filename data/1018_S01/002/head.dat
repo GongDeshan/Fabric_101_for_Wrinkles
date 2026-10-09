@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            1018_S01_002
+ProductName            S01
+test ID                1018
+Weight(gsm)            72.67
+Thickness(mm)          0.2
+Comment                Silk Satin
+band_Type              1
+Test Date              17/8/2026
+Test Time              13:01:24
+Operator               Xiaoyuan
+MachineID              12847
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              Woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.txt
+0
+0
+15.0
+1
+20.0
+0
+
+0

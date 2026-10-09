@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            1008_ES04_001
+ProductName            ES04
+test ID                1008
+Weight(gsm)            53.13
+Thickness(mm)          0.3
+Comment                Silk Burn-out
+band_Type              1
+Test Date              12/8/2026
+Test Time              16:58:01
+Operator               Xiaoyuan
+MachineID              12847
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              Woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.txt
+0
+0
+15.0
+1
+20.0
+0
+
+0

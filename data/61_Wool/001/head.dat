@@ -1,0 +1,39 @@
+Manufacturer           NM
+Material ID            61_Wool_001
+ProductName            Wool
+test ID                61
+Weight(gsm)            177
+Thickness(mm)          0.3
+Comment                
+band_Type              1
+Test Date              30/5/2025
+Test Time              16:13:44
+Operator               prakash
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0

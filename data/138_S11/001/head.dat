@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            138_S11_001
+ProductName            S11
+test ID                138
+Weight(gsm)            103.62
+Thickness(mm)          0.4
+Comment                Habotai-base Gambiered Guangdong Gauze
+band_Type              1
+Test Date              21/5/2026
+Test Time              16:39:59
+Operator               Xiaoyuan
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0

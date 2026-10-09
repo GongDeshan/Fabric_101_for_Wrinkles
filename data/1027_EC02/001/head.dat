@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            1027_EC02_001
+ProductName            EC02
+test ID                1027
+Weight(gsm)            576.45
+Thickness(mm)          2.3
+Comment                Cotton
+band_Type              1
+Test Date              18/8/2026
+Test Time              16:00:22
+Operator               Xiaoyuan
+MachineID              12847
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              Woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.txt
+0
+0
+15.0
+1
+20.0
+0
+
+0
