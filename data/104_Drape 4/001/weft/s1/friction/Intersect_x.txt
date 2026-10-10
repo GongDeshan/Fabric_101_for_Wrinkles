@@ -1,0 +1,3 @@
+ Yield point x= 1.20109
+ Yield Point y= 4.920019
+ End Index Point= 380

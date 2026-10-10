@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            186_EX-17_001
+ProductName            EX-17
+test ID                186
+Weight(gsm)            138.15
+Thickness(mm)          0.4
+Comment                Tencel/Linen Blend
+band_Type              1
+Test Date              27/5/2026
+Test Time              16:28:47
+Operator               Xiaoyuan
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0

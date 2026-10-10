@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            165_E-W04_001
+ProductName            E-W04
+test ID                165
+Weight(gsm)            338.18
+Thickness(mm)          1.8
+Comment                Machine-washable Worsted
+band_Type              1
+Test Date              19/5/2026
+Test Time              16:34:44
+Operator               Xiaoyuan
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0

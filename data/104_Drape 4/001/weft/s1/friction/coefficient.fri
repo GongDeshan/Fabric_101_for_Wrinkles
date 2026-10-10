@@ -1,0 +1,40 @@
+Data of Fabric Extension
+extensionerror=
+False
+frictionerror2=
+False
+frictionerror5=
+False
+frictionerror10=
+False
+frictionerror=
+False
+gradient0
+3.37791124722286
+energy0
+8.34590203327
+Young's modulus
+1319291.48832365
+x_peak1
+1.20109
+y_peak1
+4.920019
+No frictionerror2
+Data in Fabric Friction
+normal force
+1.232E+01
+gradient1
+1.040E-03
+energy1
+4.996E-03
+Static Friction Coefficent SC1
+3.463E-01
+Static Friction Coefficent SC0
+3.995E-01
+No frictionerror5
+gradient 2
+5.119E-02
+energy2
+2.334E-02
+Dynamic friction coefficient DC
+2.174E-01

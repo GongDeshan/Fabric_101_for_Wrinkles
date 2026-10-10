@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            170_E-R02_001
+ProductName            E-R02
+test ID                170
+Weight(gsm)            206.81
+Thickness(mm)          0.6
+Comment                Viscose/Linen Plain
+band_Type              1
+Test Date              13/5/2026
+Test Time              16:21:04
+Operator               Xiaoyuan
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0

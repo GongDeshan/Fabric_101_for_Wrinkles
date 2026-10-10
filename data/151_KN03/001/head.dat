@@ -1,0 +1,39 @@
+Manufacturer           Deshan
+Material ID            151_KN03_001
+ProductName            KN03
+test ID                151
+Weight(gsm)            239.61
+Thickness(mm)          1.4
+Comment                Cotton French Terry
+band_Type              1
+Test Date              19/5/2026
+Test Time              15:36:47
+Operator               Xiaoyuan
+MachineID              21053
+Action:                Twist
+Action                 Compression
+Action                 Friction
+fabrictype              woven
+1
+1
+0
+1
+0
+1
+5
+50.0
+15.0
+5.0
+1.0
+0.5
+compression.dat
+tension.txt
+C:\CIF\bin\setting.set
+0
+0
+15.0
+1
+20.0
+0
+
+0
