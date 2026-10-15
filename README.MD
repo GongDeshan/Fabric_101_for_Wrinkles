@@ -21,7 +21,7 @@
 
 Persistent wrinkles are everywhere in real garments, yet they remain one of the hardest phenomena to reproduce in cloth simulation. Existing methods either rely on hand-tuned parameters or lack the data needed to drive physically meaningful models.
 
-This repository hosts the official implementation of our paper, to appear in ACM Transactions on Graphics (SIGGRAPH Asia 2026):
+This repository hosts the official implementation of our paper, to appear in SIGGRAPH Asia 2026:
 
 > **Learnable Persistent Wrinkle Formation in Cloth Simulation**
 > Deshan Gong, Ningtao Mao, Xiaoyuan Yang, Xinyu Lu, He Wang, Taku Komura
