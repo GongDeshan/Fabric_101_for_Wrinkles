@@ -31,13 +31,16 @@ in `training/`.
 
 [Browse fabrics](FABRICS.md) · [Download catalog CSV](fabric_catalog.csv)
 
+The differentiable simulator, diff-uipc, is based on the [**uipc**](https://github.com/spiriMirror/libuipc).
+
 # Known Issues & Problems to Solve
+
+
 
 - After fixing some bugs, some parameters, e.g., initialization, learning rate, learning rate are different from our paper. Please use our default parameters in the code to train.
 - The method may cannot accurately tell bending friction and plasticity in all cases. I will provide a solution soon.
 - Some fabric data have errors. I will test them again soon.
-- I am correcting the typos in the README.
-
+- I am correcting the typos in the README.MD.
 
 ## Testing instrument
 
