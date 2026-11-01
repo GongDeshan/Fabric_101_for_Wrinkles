@@ -1,0 +1,88 @@
+#include <finite_element/fem_3d_constitution_diff_parm_reporter.h>
+
+namespace uipc::backend::cuda
+{
+void FEM3DConstitutionDiffParmReporter::do_assemble(Base::DiffParmInfo& info)
+{
+    DiffParmInfo this_info(this, info);
+    do_assemble(this_info);
+}
+
+void FEM3DConstitutionDiffParmReporter::do_build(Base::BuildInfo& info)
+{
+    fem = &require<FiniteElementMethod>();
+    BuildInfo this_info;
+    do_build(this_info);
+}
+
+IndexT FEM3DConstitutionDiffParmReporter::get_dim() const noexcept
+{
+    return 3;
+}
+
+muda::CBufferView<Vector3> FEM3DConstitutionDiffParmReporter::DiffParmInfo::xs() const noexcept
+{
+    return m_impl->fem->xs();  // must return full buffer, because the indices index into the full buffer
+}
+
+muda::CBufferView<Vector3> FEM3DConstitutionDiffParmReporter::DiffParmInfo::x_bars() const noexcept
+{
+    return m_impl->fem->x_bars();  // must return full buffer, because the indices index into the full buffer
+}
+
+muda::CBufferView<Float> FEM3DConstitutionDiffParmReporter::DiffParmInfo::rest_volumes() const noexcept
+{
+    auto& info = constitution_info();
+    return m_impl->fem->rest_volumes().subview(info.primitive_offset, info.primitive_count);
+}
+
+muda::CBufferView<Matrix3x3> FEM3DConstitutionDiffParmReporter::DiffParmInfo::Dm_invs() const noexcept
+{
+    auto& info = constitution_info();
+    return m_impl->fem->Dm3x3_invs().subview(info.primitive_offset, info.primitive_count);
+}
+
+muda::CBufferView<Float> FEM3DConstitutionDiffParmReporter::DiffParmInfo::thicknesses() const noexcept
+{
+    return m_impl->fem->thicknesses();  // must return full buffer, because the indices index into the full buffer
+}
+
+muda::CBufferView<IndexT> FEM3DConstitutionDiffParmReporter::DiffParmInfo::is_fixed() const noexcept
+{
+    return m_impl->fem->is_fixed();  // must return full buffer, because the indices index into the full buffer
+}
+
+muda::CBufferView<Vector4i> FEM3DConstitutionDiffParmReporter::DiffParmInfo::indices() const noexcept
+{
+    auto& info = constitution_info();
+    return m_impl->fem->tets().subview(info.primitive_offset, info.primitive_count);
+}
+
+const FiniteElementMethod::ConstitutionInfo& FEM3DConstitutionDiffParmReporter::DiffParmInfo::constitution_info() const noexcept
+{
+    return m_impl->constitution_info();
+}
+
+SizeT FEM3DConstitutionDiffParmReporter::DiffParmInfo::frame() const
+{
+    return m_diff_parm_info.frame();
+}
+IndexT FEM3DConstitutionDiffParmReporter::DiffParmInfo::dof_offset(SizeT frame) const
+{
+    return m_diff_parm_info.dof_offset(frame);
+}
+IndexT FEM3DConstitutionDiffParmReporter::DiffParmInfo::dof_count(SizeT frame) const
+{
+    return m_diff_parm_info.dof_count(frame);
+}
+
+muda::TripletMatrixView<Float, 3, 1> FEM3DConstitutionDiffParmReporter::DiffParmInfo::pGpP() const
+{
+    return m_diff_parm_info.pGpP();
+}
+
+Float FEM3DConstitutionDiffParmReporter::DiffParmInfo::dt() const
+{
+    return m_diff_parm_info.dt();
+}
+}  // namespace uipc::backend::cuda

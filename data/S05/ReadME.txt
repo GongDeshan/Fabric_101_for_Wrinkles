@@ -1,1 +1,0 @@
-The Weft retested in 002. The Weft Twist in 001 has problem.

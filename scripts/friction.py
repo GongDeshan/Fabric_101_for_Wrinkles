@@ -26,7 +26,7 @@ test_idx = "001"
 # test_idx = "002"
 
 test_direction = "warp"
-test_direction = "weft"
+# test_direction = "weft"
 
 HEAD_PATH = f"{test_log_folder}//{fabric_name}//{test_idx}//head.dat"
 
@@ -230,7 +230,6 @@ else:
         loaded_pos_force = np.load(f)
 
     plt.plot(avg_sample_load_position_loading, avg_sample_load_force_loading, label="Average Loading", linewidth=PLOT_LINE_WEIGHT)
-    # plt.plot(loaded_pos_force[0], loaded_pos_force[1], label="Uniform Loading")
 
 plt.title(f"stretch ({test_direction})".capitalize(), fontsize=30, y=1.05)
 

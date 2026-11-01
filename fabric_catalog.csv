@@ -1,7 +1,7 @@
 fabric_id,category,name,thickness_mm,areal_density_g_m2
 C01,Cotton,Cotton Plain,0.7,134.84613212874083
 C02,Cotton,Cotton Poplin,0.2,108.06515693285658
-C03,Cotton,Cotton Muslin,0.3,76.461877415393502
+C03,Cotton,High-Density Cotton Muslin,0.3,76.461877415393502
 C04,Cotton,Cotton Oxford,0.5,156.93404634581105
 C05,Cotton,Cotton Chambray,0.7,144.69226425748164
 C06,Cotton,Cotton Twill,0.6,115.72192513368985
@@ -12,93 +12,97 @@ C10,Cotton,Cotton Velveteen,1.5,229.15789473684211
 C11,Cotton,Classic Denim,1,293.89473684210526
 C12,Cotton,Stretch Denim,0.6,308.4848484848485
 C13,Cotton,Lightweight Denim,0.7,249.68238283455676
-Drape 1,Cotton,Muslin Natural,0.3,60.895004875934553
-Drape 2,Cotton,Blue Cotton,0.7,192.86420101637492
-Drape 4,Cotton,Gingham-Pink and White,0.5,114.61675579322639
-Drape 9,Cotton,Cotton Canvas,0.7,249.75296442687747
-Drape 11,Cotton,Brushed Cotton Check,0.9,162.33766233766232
+C14,Cotton,Thinner Plain Cotton,0.4,172
+KN01,Cotton,Cotton Jersey,0.7,174.33653303218523
+KN02,Cotton,Cotton Rib,0.9,309.95906267645398
+KN03,Cotton,Cotton French Terry,1.4,239.60526315789474
+E-KN01,Cotton,Combed Cotton Jersey,0.7,108.76623376623377
+E-KN03,Cotton,Cotton Interlock,1.6,323.10526315789474
+E-KN04,Cotton,Cotton Air Layer,1.4,291.31578947368422
+E-KN05,Cotton,Double-sided French Terry,3,273.10526315789474
+E-KN06,Cotton,Double-sided Terry Towel Fabric,2.9,217.86096256684493
 E-C01,Cotton,High-count Cotton Poplin,0.4,84.263372701990107
 E-C02,Cotton,Low-count Cotton Canvas,2.2999999999999998,576.44736842105272
 E-C03,Cotton,High-density Cotton Plain,0.2,101.88897316430094
 E-C04,Cotton,Stretch Cotton Khaki,0.6,246.55971479500894
+E-C05,Blends,Polyester/Cotton Plain,0.4,102.97251417632825
+E-C06,Blends,Polyester/Cotton Twill,0.4,150.28713836818721
 E-C07,Cotton,Mercerized Cotton Plain,0.4,123.37920323617583
 E-C08,Cotton,Wrinkle-free Cotton Poplin,0.3,109.50987828222631
 E-C09,Cotton,Brushed Cotton Twill,0.8,219.75578769057032
 E-C10,Cotton,Cotton Herringbone Twill,1,246.4736842105263
-E-KN01,Cotton,Combed Cotton Jersey,0.7,108.76623376623377
-E-KN03,Cotton,Cotton Interlock,1.6,323.10526315789474
-E-KN04,Cotton,Cotton Air Layer,1.4,291.31578947368422
-E-KN05,Cotton,Cotton Terry Cloth,3,273.10526315789474
-E-KN06,Cotton,Cotton Terry Cloth,2.9,217.86096256684493
-KN01,Cotton,Cotton Jersey,0.7,174.33653303218523
-KN02,Cotton,Cotton Rib,0.9,309.95906267645398
-KN03,Cotton,Cotton French Terry,1.4,239.60526315789474
-Drape 8,Linen and ramie,Washed Linen Aqua,0.8,240.25974025974025
 L01,Linen and ramie,Linen Plain,0.4,117.3836096362914
 L02,Linen and ramie,Dew Retting Linen,0.5,136.96969696969697
 L03,Linen and ramie,Ramie Plain,0.3,65.770939430057425
-Drape 5,Wool,Tartan Wool Fabrics,0.8,114.55392433653303
+L04,Linen and ramie,Heavier Linen,0.3,151
+E-W01,Blends,Wool/Polyester Blend,0.4,176.54494889298226
+E-W02,Blends,Wool/Cashmere Blend,0.4,143.67753819482067
 E-W03,Wool,Hard-twist Worsted Valitin,0.4,184.1297359771734
 E-W04,Wool,Machine-washable Worsted,1.8,338.18421052631584
-W01,Wool,Worsted Gabardine,0.4,191.89511323003575
-W02,Wool,Worsted Valitin,0.3,172.06631270993608
-W03,Wool,Woolen Flannel,0.7,268.9511575381141
-W04,Wool,Woolen Tweed,0.7,249.68238283455676
-E-S01,Silk,Heavy Silk Crepe,0.4,142.81070538519884
-E-S02,Silk,Silk Crepe Georgette,0.2,19.034203777946331
-E-S03,Silk,Silk Douppioni,0.3,86.936107198324123
-E-S04,Silk,Silk Burn-out,0.3,53.129627623072203
 S01,Silk,Silk Satin,0.2,72.669483873297935
 S02,Silk,Silk Crepe de Chine,0.3,92.028749954852458
 S03,Silk,Silk Habotai,0.1,52.443384982121572
 S04,Silk,Silk Georgette,0.2,45.111424134070148
 S05,Silk,Silk Chiffon,0.1,25.390977715173186
 S06,Silk,Silk Taffeta,0.1,67.649077184238095
-S08,Silk,Crêpe de Chine,0.5,85.561497326203209
-S09,Silk,Sanma Song Brocade,0.3,140.24632499006754
-S10,Silk,Song Brocade,0.5,217.86096256684493
-S11,Silk,Habotai-base Gambiered Guangdong Gauze,0.4,103.62263878354463
-S12,Silk,Leno-base Gambiered Guangdong Gauze,0.4,130.13327554447937
-CU01,Cellulose-derived fibers,Cupro Plain,0.1,68.118611622783249
-Drape 3,Cellulose-derived fibers,Viscose White,0.7,225.43760587238847
-EX-01,Cellulose-derived fibers,Lyocell (Tencel™) Plain,0.5,122.7807486631016
-EX-02,Cellulose-derived fibers,Lyocell Twill,0.3,165.45671253656951
-EX-03,Cellulose-derived fibers,Modal Plain,0.6,157.93226381461676
-EX-05,Cellulose-derived fibers,Bamboo Rayon Plain,0.6,251.12299465240642
-EX-06,Cellulose-derived fibers,Modal Plain,0.6,153.8324420677362
+S07,Silk,Crêpe de Chine,0.5,85.561497326203209
+S08,Silk,Sanma Song Brocade,0.3,140.24632499006754
+S09,Silk,Song Brocade,0.5,217.86096256684493
+S10,Silk,Habotai-base Gambiered Guangdong Gauze,0.4,103.62263878354463
+S11,Silk,Leno-base Gambiered Guangdong Gauze,0.4,130.13327554447937
+S12,Silk,Heavy Silk Crepe (Light),0.3,126
+E-S01,Silk,Heavy Silk Crepe,0.4,142.81070538519884
+E-S02,Silk,Silk Crepe Georgette,0.2,19.034203777946331
+E-S03,Silk,Silk Douppioni,0.3,86.936107198324123
+E-S04,Silk,Silk Burn-out,0.3,53.129627623072203
 R01,Cellulose-derived fibers,Viscose Plain,0.3,63.567739372268576
 R02,Cellulose-derived fibers,Viscose Twill,0.3,191.89511323003575
 R03,Cellulose-derived fibers,Viscose Satin,0.3,72.669483873297935
 R04,Cellulose-derived fibers,Acetate Lining,0.1,100
-Drape 6,Polyester,Duchess Satin,0.3,186.80247047350741
-Drape 12,Polyester,Plain Satin,0.7,171.58385093167703
-E-F05,Polyester,Antistatic Polyester,0.6,318.07486631016047
-E-KN07,Polyester,Polyester Polar Fleece,1.2,321.02999999999997
-E-P02,Polyester,Cationic Polyester,0.3,121.89836385307184
-E-P03,Polyester,Polyester Peach Skin,0.4,148.37288258027232
-E-P04,Polyester,Polyester Suede,0.5,185.45454545454547
-EX-08,Polyester,Coolmax Jersey,0.6,128.73440285204993
-EX-15,Polyester,Recycled Polyester Plain,0.6,185.27629233511587
+CU01,Cellulose-derived fibers,Cupro Plain,0.1,68.118611622783249
 P01,Polyester,Polyester Taffeta,0.1,83.613248094773724
 P02,Polyester,Polyester Chiffon,0.4,97.735399284862936
-E-N01,Nylon,Nylon Taslon,0.4,131.14458048903816
-E-N02,Nylon,Nylon Oxford,0.2,122.72907862895944
 N01,Nylon,Nylon Taffeta,0.2,81.735110340593053
 N02,Nylon,Nylon Twill,0.4,178.13414237728901
 A01,Acrylic,Acrylic Wool-like,0.5,239.50089126559715
-Drape 7,Blends,Plain PolyCotton,0.4,105.39242243652257
-Drape 10,Blends,Pale Gold Metallic Viscose,0.7,204.4748729531338
-E-C05,Blends,Polyester/Cotton Plain,0.4,102.97251417632825
-E-C06,Blends,Polyester/Cotton Twill,0.4,150.28713836818721
-E-L01,Blends,Linen/Cotton Plain,0.5,143.38680926916223
 E-R02,Blends,Viscose/Linen Plain,0.6,206.80926916221034
-E-W01,Blends,Wool/Polyester Blend,0.4,176.54494889298226
-E-W02,Blends,Wool/Cashmere Blend,0.4,143.67753819482067
-EX-04,Blends,Modal/Cotton Jersey,0.6,230.76648841354725
-EX-17,Blends,Tencel™/Linen Blend,0.4,138.15147903348142
+E-P02,Polyester,Cationic Polyester,0.3,121.89836385307184
+E-P03,Polyester,Polyester Peach Skin,0.4,148.37288258027232
+E-P04,Polyester,Polyester Suede,0.5,185.45454545454547
+E-N01,Nylon,Nylon Taslon,0.4,131.14458048903816
+E-N02,Nylon,Nylon Oxford,0.2,122.72907862895944
+E-KN07,Polyester,Polyester Polar Fleece,1.2,321.02999999999997
 E-F01,Coated and functional fabrics,Coated Nylon,0.1,41.89691913172247
 E-F02,Coated and functional fabrics,Waterproof Breathable,0.2,126.12417379997834
+E-F05,Polyester,Antistatic Polyester,0.6,318.07486631016047
+EX-01,Cellulose-derived fibers,Lyocell (Tencel™) Plain,0.5,122.7807486631016
+EX-02,Cellulose-derived fibers,Lyocell Twill,0.3,165.45671253656951
+EX-03,Cellulose-derived fibers,Modal Plain,0.6,157.93226381461676
+EX-04,Blends,Modal/Cotton Jersey,0.6,230.76648841354725
+EX-05,Cellulose-derived fibers,Bamboo Rayon Plain,0.6,251.12299465240642
+EX-08,Polyester,Coolmax Jersey,0.6,128.73440285204993
 EX-11,Coated and functional fabrics,Reflective Fabric,0.1,129.88044930833965
-Paper 1,Paper,Printing Paper (80 g),0.1,83.152000000000001
-Paper 2,Paper,Folding Paper 180 g,0.2,81.328000000000003
-Paper 3,Paper,Black Folding Paper 180 g,0.2,173.71199999999999
+EX-15,Polyester,Recycled Polyester Plain,0.6,185.27629233511587
+EX-17,Blends,Tencel™/Linen Blend,0.4,138.15147903348142
+EX-18,Cellulose-derived fibers,Modal Plain,0.6,153.8324420677362
+DP 1,Cotton,Low-Density Cotton Muslin,0.3,60.895004875934553
+DP 2,Cotton,Cotton Chambray,0.7,192.86420101637492
+DP 3,Cellulose-derived fibers,White Viscose,0.7,225.43760587238847
+DP 4,Cotton,Gingham-Pink White Cotton,0.5,114.61675579322639
+DP 5,Wool,Tartan Wool Fabrics,0.8,114.55392433653303
+DP 6,Polyester,Duchess Satin,0.3,186.80247047350741
+DP 7,Blends,Plain PolyCotton,0.4,105.39242243652257
+DP 8,Linen and ramie,Washed Linen Aqua,0.8,240.25974025974025
+DP 9,Cotton,Cotton Canvas,0.7,249.75296442687747
+DP 10,Blends,Pale Gold Metallic Viscose,0.7,204.4748729531338
+DP 11,Cotton,Brushed Cotton Check,0.9,162.33766233766232
+DP 12,Polyester,Polyester Plain Satin,0.7,171.58385093167703
+Paper 1,Paper,Printing Paper,0.1,83.152000000000001
+Paper 2,Paper,Folding Paper,0.2,81.328000000000003
+Paper 3,Paper,Thick Folding Paper,0.2,173.71199999999999
+Paper 4,Paper,Thinner Printing Paper,0.08,79.43
+W01,Wool,Worsted Gabardine,0.4,191.89511323003575
+W02,Wool,Worsted Valitin,0.3,172.06631270993608
+W03,Wool,Woolen Flannel,0.7,268.9511575381141
+W04,Wool,Woolen Tweed,0.7,249.68238283455676
+E-L01,Blends,Linen/Cotton Plain,0.5,143.38680926916223
