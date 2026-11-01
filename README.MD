@@ -136,23 +136,6 @@ values. Keep these files with their measurement folders.
 `friction.dat` contains the drag/stretch test. The processing script extracts
 its initial tensile loading curve for stretch training.
 
-### Session selection for specific records
-
-Use the sessions below for records that were retested. The folder paths refer
-to the acquisition data, not the microscopy photographs.
-
-| Data folder | Session selection |
-| --- | --- |
-| `data/E-C02/` | Drag/stretch: 003. Compression/twist: warp 001, weft 002. |
-| `data/E-F02/` | Drag/stretch: 004. Compression/twist: 003. |
-| `data/E-KN07/` | Use 001. |
-| `data/E-N02/` | Drag/stretch: 007. Compression/twist: 006. |
-| `data/EX-11/` | Drag/stretch: 005. Twist: 004. Compression: warp 002, weft 003. |
-| `data/Paper 1/` | Compression/twist: 002. Drag/stretch: 003. |
-| `data/S01/` | Use 004 for warp twist. Other records were flagged as problematic. |
-| `data/S05/` | Weft was retested in 002; weft twist in 001 was flagged as problematic. |
-| `data/S08/` | Warp was retested in 002; warp records in 001 were flagged as problematic. |
-
 ## Microscopy photographs
 
 `photos/` contains microscope photographs taken at different magnification
