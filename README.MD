@@ -31,7 +31,7 @@ in `training/`.
 
 [Browse fabrics](FABRICS.md) · [Download catalog CSV](fabric_catalog.csv)
 
-The differentiable simulator, diff-uipc, is based on the [**uipc**](https://github.com/spiriMirror/libuipc).
+The differentiable simulator is based on the [**uipc**](https://github.com/spiriMirror/libuipc).
 
 # Known Issues & Problems to Solve
 
