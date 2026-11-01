@@ -35,15 +35,9 @@ in `training/`.
 
 The measurements in this dataset were collected using the **Leeds University
 Fabric Handle Evaluation System (LUFHES)**, developed at the University of Leeds
-under the leadership of Professor Ningtao Mao. LUFHES applies a series of
-mechanical tests to quantify fabric tactile behavior. Our measurements include
-compression, twisting, and drag/stretch loading, with force–displacement and
-torque–rotation curves used to characterize cloth response and hysteresis.
-
-For the instrument design and measurement method, see Ningtao Mao and
+under the leadership of Professor Ningtao Mao. For the instrument design and measurement method, see Ningtao Mao and
 Mark Taylor, *Evaluation apparatus and method*, international patent
-application publication [WO 2012/104627 A2](https://patents.google.com/patent/WO2012104627A2/en),
-University of Leeds, published 9 August 2012.
+application publication [WO 2012/104627 A2](https://patents.google.com/patent/WO2012104627A2/en).
 
 ### Instrument and test setup
 
