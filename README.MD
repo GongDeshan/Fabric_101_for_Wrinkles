@@ -31,6 +31,14 @@ in `training/`.
 
 [Browse fabrics](FABRICS.md) · [Download catalog CSV](fabric_catalog.csv)
 
+# Known Issues & Problems to Solve
+
+- After fixing some bugs, some parameters, e.g., initialization, learning rate, learning rate are different from our paper. Please use our default parameters in the code to train.
+- The method may cannot accurately tell bending friction and plasticity in all cases. I will provide a solution soon.
+- Some fabric data have errors. I will test them again soon.
+- I am correcting the typos in the README.
+
+
 ## Testing instrument
 
 The measurements in this dataset were collected using the [**Leeds University
@@ -210,6 +218,16 @@ controls plot saving in `compress_twist.py`, separately from NumPy export.
 Follow the [Windows build and installation guide](https://spirimirror.github.io/libuipc-doc/build_install/windows/),
 using the bundled [`libuipc-diff/`](libuipc-diff) as the source directory.
 
+
+
+
+
+
+
+
+
+
+
 ### Tested Windows environments
 
 | Component | RTX 3070 Ti laptop | RTX 5070 Ti desktop | RTX 5090 desktop |
@@ -379,7 +397,7 @@ Batch example, from the orthotropic folder:
 python train.py --headless-train --isotropic-run "<isotropic run folder>" --epochs 500
 ```
 
-
+## More, and more.
 
 ## License
 
