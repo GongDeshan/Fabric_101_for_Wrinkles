@@ -1,5 +1,0 @@
-{
-    "python-envs.defaultEnvManager": "ms-python.python:conda",
-    "python-envs.defaultPackageManager": "ms-python.python:conda",
-    "cmake.sourceDirectory": "D:/Research_4/Fabric_101_for_Wrinkles/libuipc-diff"
-}
