@@ -33,8 +33,8 @@ in `training/`.
 
 ## Testing instrument
 
-The measurements in this dataset were collected using the **Leeds University
-Fabric Handle Evaluation System (LUFHES)**, developed at the University of Leeds
+The measurements in this dataset were collected using the [**Leeds University
+Fabric Handle Evaluation System (LUFHES)**](https://litac.leeds.ac.uk/roaches-international-takes-fabric-evaluation-commercial/), developed at the University of Leeds
 under the leadership of Professor Ningtao Mao. For the instrument design and measurement method, see Ningtao Mao and
 Mark Taylor, *Evaluation apparatus and method*, international patent
 application publication [WO 2012/104627 A2](https://patents.google.com/patent/WO2012104627A2/en).
