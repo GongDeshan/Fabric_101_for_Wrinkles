@@ -37,7 +37,7 @@ The measurements in this dataset were collected using the [**Leeds University
 Fabric Handle Evaluation System (LUFHES)**](https://litac.leeds.ac.uk/roaches-international-takes-fabric-evaluation-commercial/), developed at the University of Leeds
 under the leadership of Professor Ningtao Mao. For the instrument design and measurement method, see Ningtao Mao and
 Mark Taylor, *Evaluation apparatus and method*, international patent
-application publication [WO 2012/104627 A2](https://patents.google.com/patent/WO2012104627A2/en).
+application publication [WO 2012/104627 A2](https://patents.google.com/patent/WO2012104627A2/en). 
 
 ### Instrument and test setup
 
@@ -204,27 +204,6 @@ Figures are displayed with Matplotlib. Processed curves are saved under
 `processed_data/`; files with the same name are overwritten. `IS_SAVE_PLOT`
 controls plot saving in `compress_twist.py`, separately from NumPy export.
 
-### Read a processed curve
-
-Each exported `.npy` array has shape `(2, N)`: row 0 is displacement or rotation,
-and row 1 is force (N) or torque (N m). Displacement is in mm and rotation is
-in degrees.
-
-```python
-from pathlib import Path
-import numpy as np
-import matplotlib.pyplot as plt
-
-path = Path("processed_data/Cotton_weft_twist.npy")
-curve = np.load(path, allow_pickle=False)
-assert curve.ndim == 2 and curve.shape[0] == 2
-
-angle_deg, torque_nm = curve
-plt.plot(angle_deg, torque_nm)
-plt.xlabel("Rotation angle (degrees)")
-plt.ylabel("Torque (N·m)")
-plt.show()
-```
 
 ## Building and installing the simulation backend
 
