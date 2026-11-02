@@ -155,10 +155,10 @@ settings, to judge the scale of the visible fabric structure.
 | :---: | :---: | :---: | :---: |
 | <img src="photos/Two_Pounds/1.png" width="180" alt="UK two-pound coin - setting 1"/> | <img src="photos/Two_Pounds/5.png" width="180" alt="UK two-pound coin - setting 5"/> | <img src="photos/Ruler/1.png" width="180" alt="Ruler - setting 1"/> | <img src="photos/Ruler/5.png" width="180" alt="Ruler - setting 5"/> |
 
-**Image orientation:**
+**Yarns Direction in Fabric Photos:**
 
-- **Vertical: warp.**
-- **Horizontal: weft.**
+- **Vertical: warp\wale\machine direction.**
+- **Horizontal: weft\course\cross-machine direction.**
 
 ## Process the measurements
 
