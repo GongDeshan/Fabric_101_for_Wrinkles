@@ -36,11 +36,10 @@ The differentiable simulator is based on the [**uipc**](https://github.com/spiri
 # Known Issues & Problems to Solve
 
 
-
+- Under axial compression, thin-shell buckling can lead to different equilibrium shapes and variations in the predicted net force. Tighter Newton solver tolerances can reduce numerical variation in some cases, at the cost of longer simulation times, but do not guarantee a unique deformation path or stable optimization.
 - After fixing some bugs, some parameters, e.g., initialization, learning rate, learning rate are different from our paper. Please use our default parameters in the code to train.
 - The method may cannot accurately tell bending friction and plasticity in all cases. I will provide a solution soon.
-- Some fabric data have errors. I will test them again soon.
-- I am correcting the typos in the README.MD.
+- Some fabric data have errors. I will test them again.
 
 ## Testing instrument
 
