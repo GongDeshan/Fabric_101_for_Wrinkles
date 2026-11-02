@@ -59,6 +59,9 @@ measurement order: twist, compression, then stretch.
 | :---: | :---: | :---: | :---: | :---: |
 | <img src="assets/lufhes/LUFHES_Front_View_No_Logo.png" width="135" alt="Front view of the LUFHES fabric testing instrument"/> | <img src="assets/lufhes/Fabric.png" width="135" alt="Fabric specimen mounted in the LUFHES fixture"/> | <img src="assets/lufhes/Twist.png" width="135" alt="LUFHES twist test configuration"/> | <img src="assets/lufhes/Compress.png" width="135" alt="Fabric buckling during a LUFHES compression test"/> | <img src="assets/lufhes/Stretch.png" width="135" alt="LUFHES stretch test configuration"/> |
 
+We thank [**Roaches**](https://www.roaches.co.uk) and their team for their technical support.  
+For more information about the instrument, please [**contact Roaches**](https://www.roaches.co.uk/textile-testing-equipment/sentire-fabric-handle/).
+
 ## Repository structure
 
 ```text
@@ -143,8 +146,14 @@ its initial tensile loading curve for stretch training.
 
 ## Microscopy photographs
 
-`photos/` contains microscope photographs taken at different magnification
-settings.
+`photos/` contains microscope photographs taken at two magnification settings,
+identified by the image filenames `1` and `5`. Fabric photographs can be compared
+with the UK two-pound coin and ruler images below, taken at the corresponding
+settings, to judge the scale of the visible fabric structure.
+
+| UK two-pound coin - setting 1 | UK two-pound coin - setting 5 | Ruler - setting 1 | Ruler - setting 5 |
+| :---: | :---: | :---: | :---: |
+| <img src="photos/Two_Pounds/1.png" width="180" alt="UK two-pound coin - setting 1"/> | <img src="photos/Two_Pounds/5.png" width="180" alt="UK two-pound coin - setting 5"/> | <img src="photos/Ruler/1.png" width="180" alt="Ruler - setting 1"/> | <img src="photos/Ruler/5.png" width="180" alt="Ruler - setting 5"/> |
 
 **Image orientation:**
 
