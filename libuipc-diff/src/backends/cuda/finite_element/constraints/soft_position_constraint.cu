@@ -182,11 +182,6 @@ class SoftPositionConstraint final : public FiniteElementConstraint
 
 REGISTER_SIM_SYSTEM(SoftPositionConstraint);
 
-// Fix (2026-10-08): the old replay restored FEM positions but left these
-// constraint buffers at the final frame. Releasing a vertex consequently
-// removed s*m*I from the adjoint Hessian of earlier constrained frames.
-// Record the exact forward buffers; do NOT call do_step() while replaying,
-// since it reads the live geometry/animator rather than the historical frame.
 class SoftPositionConstraintAdjointMethodReplayer final : public AdjointMethodReplayer
 {
   public:

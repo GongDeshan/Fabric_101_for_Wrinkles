@@ -36,8 +36,8 @@ The differentiable simulator is based on the [**uipc**](https://github.com/spiri
 # Known Issues & Problems to Solve
 
 
-- Under axial compression, thin-shell buckling can lead to different equilibrium shapes and variations in the predicted net force. Tighter Newton solver tolerances can reduce numerical variation in some cases, at the cost of longer simulation times, but do not guarantee a unique deformation path or stable optimization.
-- After fixing some bugs, some parameters, e.g., initialization, learning rate, learning rate are different from our paper. Please use our default parameters in the code to train.
+- Under axial compression, thin-shell buckling can lead to different equilibrium shapes and variations in the predicted net force. Tighter Newton solver tolerances can reduce numerical variation in some cases, at the cost of longer simulation times, but do not guarantee a unique deformation path.
+- After fixing some bugs, some parameters, e.g., initialization and learning rate, are different from our paper. Please use our default parameters in the code to train.
 - The method may cannot accurately tell bending friction and plasticity in all cases. I will provide a solution soon.
 - Some fabric data have errors. I will test them again.
 
@@ -128,21 +128,6 @@ grouped by category and sorted by fabric ID.
 | `thickness_mm` | Thickness (mm) |
 | `areal_density_g_m2` | Areal density (g/m^2, gsm) |
 
-## Raw measurement files
-
-The `.dat` files contain test settings and measurements. `head.dat` contains
-material and session information; `tarevalues.csv` contains the recorded tare
-values. Keep these files with their measurement folders.
-
-| File | Processing entry point | Processed curve axes |
-|---|---|---|
-| `compression.dat` | `compress_twist.py`, `test_type = "compression"` | Compression displacement (mm), force (N) |
-| `twist.dat` | `compress_twist.py`, `test_type = "twist"` | Rotation angle (degrees), torque (N·m) |
-| `friction.dat` | `friction.py` | Drag/stretch displacement (mm), load force (N) |
-
-`friction.dat` contains the drag/stretch test. The processing script extracts
-its initial tensile loading curve for stretch training.
-
 ## Microscopy photographs
 
 `photos/` contains microscope photographs taken at two magnification settings,
@@ -158,6 +143,21 @@ settings, to judge the scale of the visible fabric structure.
 
 - **Vertical: warp\wale\machine direction.**
 - **Horizontal: weft\course\cross-machine direction.**
+
+## Raw measurement files
+
+The `.dat` files contain test settings and measurements. `head.dat` contains
+material and session information; `tarevalues.csv` contains the recorded tare
+values. Keep these files with their measurement folders.
+
+| File | Processing entry point | Processed curve axes |
+|---|---|---|
+| `compression.dat` | `compress_twist.py`, `test_type = "compression"` | Compression displacement (mm), force (N) |
+| `twist.dat` | `compress_twist.py`, `test_type = "twist"` | Rotation angle (degrees), torque (N·m) |
+| `friction.dat` | `friction.py` | Drag/stretch displacement (mm), load force (N) |
+
+`friction.dat` contains the drag/stretch test. The processing script extracts
+its initial tensile loading curve for stretch training.
 
 ## Process the measurements
 
