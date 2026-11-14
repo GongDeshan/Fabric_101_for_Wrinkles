@@ -11,6 +11,8 @@
 
 *Real and simulated persistent wrinkles in different fabrics.*
 
+The fixture shown above is available as [3D-printable OBJ models](assets/Teaser_3D_Print).
+
 </div>
 
 ## Overview
@@ -38,7 +40,9 @@ The differentiable simulator is based on the [**uipc**](https://github.com/spiri
 
 - Under axial compression, thin-shell buckling can lead to different equilibrium shapes and variations in the predicted net force. Tighter Newton solver tolerances can reduce numerical variation in some cases, at the cost of longer simulation times, but do not guarantee a unique deformation path.
 - After fixing some bugs, some parameters, e.g., initialization and learning rate, are different from our paper. Please use our default parameters in the code to train.
-- The method may cannot accurately tell bending friction and plasticity in all cases. I will provide a solution soon.
+- Our tests cover moderate deformations, with limited data at larger deformations.
+- Fitting bending plasticity from compression curves alone can lead to unrealistically sharp residual wrinkles in simulations of wrinkle-resistant fabrics such as wool and silk.
+- Fabric viscosity is omitted in our current work.
 - Some fabric data have errors. I will test them again.
 
 ## Testing instrument
@@ -50,6 +54,12 @@ Mark Taylor, *Evaluation apparatus and method*, international patent
 application publication [WO 2012/104627 A2](https://patents.google.com/patent/WO2012104627A2/en). 
 
 ### Instrument and test setup
+
+The renderings show the LUFHES instrument, a mounted specimen, and the twist and compression setups.
+
+| Instrument | Front view | Mounted fabric | Twist | Compression |
+| :---: | :---: | :---: | :---: | :---: |
+| <img src="assets/lufhes_render/LUFHES.png" width="135" alt="LUFHES rendering, instrument"/> | <img src="assets/lufhes_render/LUFHES_Front.png" width="135" alt="LUFHES rendering, front view"/> | <img src="assets/lufhes_render/LUFHES_Fabric.png" width="135" alt="LUFHES rendering, mounted fabric"/> | <img src="assets/lufhes_render/LUFHES_Twist.png" width="135" alt="LUFHES rendering, twist"/> | <img src="assets/lufhes_render/LUFHES_Compressed.png" width="135" alt="LUFHES rendering, compression"/> |
 
 The photographs show the instrument, a mounted specimen, and the tests in
 measurement order: twist, compression, then stretch.
@@ -87,7 +97,9 @@ Fabric_101_for_Wrinkles/
 ├── libuipc-diff/          # Simulation backend source and Python bindings
 ├── scripts/
 │   ├── compress_twist.py # Compression and twist processing
-│   └── friction.py       # Stretch loading-curve processing
+│   ├── friction.py       # Stretch loading-curve processing
+│   ├── paper_simulations/ # Paper examples
+│   └── cloth_simulations/ # Cloth examples
 ├── training/             # Interactive and batch parameter fitting
 │   ├── stretch/
 │   ├── shear/
@@ -223,21 +235,10 @@ Figures are displayed with Matplotlib. Processed curves are saved under
 `processed_data/`; files with the same name are overwritten. `IS_SAVE_PLOT`
 controls plot saving in `compress_twist.py`, separately from NumPy export.
 
-
 ## Building and installing the simulation backend
 
 Follow the [Windows build and installation guide](https://spirimirror.github.io/libuipc-doc/build_install/windows/),
 using the bundled [`libuipc-diff/`](libuipc-diff) as the source directory.
-
-
-
-
-
-
-
-
-
-
 
 ### Tested Windows environments
 
@@ -408,7 +409,135 @@ Batch example, from the orthotropic folder:
 python train.py --headless-train --isotropic-run "<isotropic run folder>" --epochs 500
 ```
 
-## More, and more.
+## Fitted material parameters
+
+### Cotton and Linen
+
+These are the Cotton and Linen parameter sets used in the Sit on Shirt simulation.
+
+Stretch and shear stiffness coefficients are in Pa. Shear thresholds and yield
+strains are dimensionless.
+
+| Parameter | Cotton | Linen |
+| --- | ---: | ---: |
+| Warp stretch stiffness | 5753754.3771 | 7268873.8665 |
+| Weft stretch stiffness | 1229799.9644 | 4894094.1377 |
+| Shear stiffness coefficient k33_0 | 418811.2270 | 42933.8220 |
+| Shear stiffness coefficient k33_1 | 449440.2107 | 51143.0707 |
+| Shear friction stiffness | 607111.0712 | 197314.8504 |
+| Shear friction threshold | 0.005315771 | 0.001399683 |
+| Shear yield strain | 0.022090133 | 0.021238335 |
+| Shear plastic hardening | 108828.1354 | 89593.0812 |
+
+Orthotropic bending coefficients are listed as simulator inputs in the physical
+warp and weft directions. The friction threshold and yield angle are in radians.
+
+| Parameter | Cotton warp | Cotton weft | Linen warp | Linen weft |
+| --- | ---: | ---: | ---: | ---: |
+| Bending stiffness | 488.9805 | 187.8062 | 1165.1620 | 606.2312 |
+| Bending friction stiffness | 540.7861 | 155.8220 | 1043.0364 | 613.8104 |
+| Bending friction threshold | 0.098170933 | 0.062618447 | 0.155133893 | 0.124392230 |
+| Bending plastic hardening | 52.0413 | 21.8654 | 44.3990 | 12.1666 |
+| Bending yield angle | 1.008076516 | 0.952237515 | 0.991530028 | 0.925513305 |
+
+### Paper
+
+The paper airplane, lantern, and crumpled paper simulations use the same
+fitted parameters. Stretch stiffness is shared across both directions,
+and bending uses the isotropic model.
+
+| Parameter | Value |
+| --- | ---: |
+| Density (kg/m³) | 992.875 |
+| Thickness (mm) | 0.080 |
+| Stretch stiffness, both directions (Pa) | 188180336.2235 |
+| Shear stiffness coefficient k33_0 (Pa) | 9874486.7638 |
+| Shear stiffness coefficient k33_1 (Pa) | 11047956.0906 |
+| Shear friction stiffness (Pa) | 11993285.2858 |
+| Shear friction threshold | 0.008529096 |
+| Shear yield strain | 0.021834276 |
+| Shear plastic hardening (Pa) | 104082.2119 |
+| Isotropic bending stiffness | 45680.4050 |
+| Bending friction stiffness | 41512.9186 |
+| Bending friction threshold (rad) | 0.182255251 |
+| Bending plastic hardening | 1003.7626 |
+| Bending yield angle (rad) | 0.293206613 |
+
+### Drape 01
+
+The Cusick drape scene uses the following fitted parameters.
+Density is 203 kg/m³ and thickness is 0.30 mm.
+
+| Parameter | Value |
+| --- | ---: |
+| Warp stretch stiffness (Pa) | 3387343.7401 |
+| Weft stretch stiffness (Pa) | 3062594.2045 |
+| Shear stiffness coefficient k33_0 (Pa) | 4066.9669 |
+| Shear stiffness coefficient k33_1 (Pa) | 18547.8388 |
+| Shear friction stiffness (Pa) | 145409.1266 |
+| Shear friction threshold | 0.002502612 |
+| Shear yield strain | 0.024616595 |
+| Shear plastic hardening (Pa) | 188338.8274 |
+
+| Orthotropic bending parameter | Warp | Weft |
+| --- | ---: | ---: |
+| Bending stiffness | 126.7999 | 172.2777 |
+| Bending friction stiffness | 97.8315 | 138.1102 |
+| Bending friction threshold (rad) | 0.063306675 | 0.069783019 |
+| Bending plastic hardening | 55.4199 | 61.7338 |
+| Bending yield angle (rad) | 0.999749601 | 1.007369644 |
+
+## Simulation
+
+Run the commands below from the repository root. The scenes load their bundled meshes and motion data.
+
+### Cloth simulations
+
+| Sit on Shirt | Washing Cloth | Sit with Pants | Wrap Legs Pants |
+| :---: | :---: | :---: | :---: |
+| <img src="assets/Simulation_Figure/Compressed_State.png" width="175" alt="Sit on Shirt simulation"/> | <img src="assets/Simulation_Figure/Washing.png" width="175" alt="Washing Cloth simulation"/> | <img src="assets/Simulation_Figure/Cotton_Sit_High_Res.png" width="175" alt="Sit with Pants simulation"/> | <img src="assets/Simulation_Figure/Cotton_Rolled_State.png" width="175" alt="Wrap Legs Pants simulation"/> |
+
+| Scene | Command |
+|---|---|
+| Sit on Shirt | `python scripts/cloth_simulations/sit_on_shirt/sit_on_shirt.py --fabric cotton` |
+| Washing Cloth | `python scripts/cloth_simulations/washing_cloth/washing_cloth.py --fabric cotton` |
+| Sit with Pants | `python scripts/cloth_simulations/sit_with_pants/sit_with_pants.py --fabric cotton` |
+| Wrap Legs Pants | `python scripts/cloth_simulations/wrap_legs_pants/wrap_legs_pants.py --fabric cotton` |
+
+Set `--fabric` to `cotton`, `linen`, `wool`, `pet`, or `silk`. In Polyscope, use **Run / Pause** for playback, **One Step** to advance a frame, and **Reset** to return to the initial state. Each scene saves its OBJ sequence and run configuration in its own `runs/` directory.
+
+### Paper simulations
+
+| Paper airplane | Paper lantern | Crumpled paper |
+| :---: | :---: | :---: |
+| <img src="assets/Simulation_Figure/Folded_Paper_Plane.png" width="225" alt="Paper airplane simulation"/> | <img src="assets/Simulation_Figure/Lamp_Finished_Light_On.png" width="225" alt="Paper lantern simulation"/> | <img src="assets/Simulation_Figure/Squash_Paper.png" width="225" alt="Crumpled paper simulation"/> |
+
+| Scene | Command | Output under `scripts/paper_simulations/output/` |
+|---|---|---|
+| Fold a paper airplane | `python scripts/paper_simulations/fold_plane.py` | `fold_plane/` |
+| Shape a paper lantern | `python scripts/paper_simulations/make_lamp_sphere.py` | `make_lamp_sphere/` |
+| Crumple a sheet of paper | `python scripts/paper_simulations/squash_paper.py` | `square_paper/` |
+
+The scenes use the fitted Paper parameters. In Polyscope, **Run & Stop** starts from frame 0 or pauses a running scene. **Stop & Continue** pauses or resumes from the current frame. **One Step** advances a single frame. Continuous playback exports OBJ files to `meshes/`, with solver state in `workspace/`.
+
+#### Fold and throw an airplane
+
+Run either command and click **Play** in Polyscope. The wind scenes require the bundled backend with TriangleWind.
+
+| Material | Command |
+|---|---|
+| Paper | `python scripts/paper_simulations/fold_throw_paper_plane_tailwind_copy.py` |
+| Cotton | `python scripts/paper_simulations/fold_throw_cotton_plane_tailwind_copy.py` |
+
+### Cusick drape
+
+Run the circular drape example with the fitted Drape 01 parameters.
+
+```powershell
+python scripts/cloth_simulations/cusick_drape/cusick_drape.py
+```
+
+In Polyscope, click **Run & Stop** to start. The scene exports OBJ frames to `scripts/cloth_simulations/cusick_drape/runs/drape_01/meshes/`.
 
 ## License
 

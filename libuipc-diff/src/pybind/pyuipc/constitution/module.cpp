@@ -11,6 +11,7 @@
 #include <pyuipc/constitution/constraint.h>
 #include <pyuipc/constitution/soft_position_constraint.h>
 #include <pyuipc/constitution/finite_element_extra_constitution.h>
+#include <pyuipc/constitution/triangle_wind.h>
 #include <pyuipc/constitution/kirchhoff_rod_bending.h>
 #include <pyuipc/constitution/soft_transform_constraint.h>
 #include <pyuipc/constitution/discrete_shell_bending.h>
@@ -46,6 +47,7 @@ PyModule::PyModule(py::module& m)
 
     // Finite Extra Constitutions
     PyFiniteElementExtraConstitution{m};
+    PyTriangleWind{m};
     PyKirchhoffRodBending{m};
 
     PyDiscreteShellBending{m};

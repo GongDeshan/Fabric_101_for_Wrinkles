@@ -1,0 +1,162 @@
+{
+  "cotton": {
+    "source": {
+      "machine": "PC2",
+      "bending": "cotton_compression_synced_20261105/59_Cotton/orthotropic/training/best.json",
+      "shear": "cotton_shear_energy_synced_pc2_20261105/new/59_Cotton/stage6/status.json"
+    },
+    "best_label": "latest_joint_best",
+    "bending": {
+      "kb_warp": 488.98048444696354,
+      "friction_warp": 540.7861057052156,
+      "thres_warp": 0.09817093293022802,
+      "hardening_warp": 52.04134477512193,
+      "yield_warp": 1.0080765163732834,
+      "kb_weft": 187.80616871022428,
+      "friction_weft": 155.82203096291212,
+      "thres_weft": 0.0626184467977323,
+      "hardening_weft": 21.865392737541345,
+      "yield_weft": 0.9522375149540244
+    },
+    "stretch_shear": {
+      "warp": 5753754.3771,
+      "weft": 1229799.9644,
+      "density": 430,
+      "thickness": 0.0004,
+      "k33_0": 418811.2270184079,
+      "k33_1": 449440.2107390804,
+      "friction": 607111.0711703744,
+      "thres": 0.0053157712329678294,
+      "yield_uv": 0.022090133241914264,
+      "hardening": 108828.13543624771
+    }
+  },
+  "linen": {
+    "source": {
+      "machine": "PC2",
+      "bending": "multi_material_synced_20261105/60_Linen/bending/60_Linen/orthotropic/training/best.json",
+      "shear": "multi_material_synced_20261105/60_Linen/shear6/best.npz"
+    },
+    "best_label": "latest_joint_best",
+    "bending": {
+      "kb_warp": 1165.1619547479681,
+      "friction_warp": 1043.0364442745465,
+      "thres_warp": 0.155133892868651,
+      "hardening_warp": 44.39895484951827,
+      "yield_warp": 0.9915300279496954,
+      "kb_weft": 606.2312130024796,
+      "friction_weft": 613.8103915461535,
+      "thres_weft": 0.12439223001273172,
+      "hardening_weft": 12.166621176569265,
+      "yield_weft": 0.925513304855562
+    },
+    "stretch_shear": {
+      "warp": 7268873.8665,
+      "weft": 4894094.1377,
+      "density": 503,
+      "thickness": 0.0003,
+      "k33_0": 42933.822042962885,
+      "k33_1": 51143.07074961534,
+      "friction": 197314.85040889273,
+      "thres": 0.0013996833126455888,
+      "yield_uv": 0.02123833522000653,
+      "hardening": 89593.08117374436
+    }
+  },
+  "pet": {
+    "source": {
+      "machine": "PC2",
+      "bending": "multi_material_synced_20261105/62_pet/bending/62_pet/orthotropic/training/best.json",
+      "shear": "multi_material_synced_20261105/62_pet/shear6/best.npz"
+    },
+    "best_label": "latest_joint_best",
+    "bending": {
+      "kb_warp": 437.7912548822667,
+      "friction_warp": 550.7291453284447,
+      "thres_warp": 0.11805511684994947,
+      "hardening_warp": 50.00000000000001,
+      "yield_warp": 100,
+      "kb_weft": 437.7912548822667,
+      "friction_weft": 550.7291453284447,
+      "thres_weft": 0.11805511684994947,
+      "hardening_weft": 50.00000000000001,
+      "yield_weft": 100
+    },
+    "stretch_shear": {
+      "warp": 7131122.6556,
+      "weft": 11186885.7799,
+      "density": 1000,
+      "thickness": 0.0001,
+      "k33_0": 227048.79280124625,
+      "k33_1": 327524.740881687,
+      "friction": 666146.0542231024,
+      "thres": 0.00500478448636537,
+      "yield_uv": 0.020459324476375572,
+      "hardening": 76694.08739195601
+    }
+  },
+  "wool": {
+    "source": {
+      "machine": "PC2",
+      "bending": "wool_bending_new_shear_full_20261109/61_Wool/orthotropic/training/best.json",
+      "shear": "wool_shear_staged_yield002_20261109/stage2/best.npz"
+    },
+    "best_label": "latest_joint_best",
+    "bending": {
+      "kb_warp": 370.78849903055647,
+      "friction_warp": 118.0779335005479,
+      "thres_warp": 0.07746477042825815,
+      "hardening_warp": 50.00000000000001,
+      "yield_warp": 100,
+      "kb_weft": 170.8003922505916,
+      "friction_weft": 41.7731934963007,
+      "thres_weft": 0.05539936579112078,
+      "hardening_weft": 50.00000000000001,
+      "yield_weft": 100
+    },
+    "stretch_shear": {
+      "warp": 3368709.2254,
+      "weft": 2448119.559,
+      "density": 590,
+      "thickness": 0.0003,
+      "k33_0": 236633.21787943662,
+      "k33_1": 1370382.7490411499,
+      "friction": 310143.15690572525,
+      "thres": 0.003679235790574096,
+      "yield_uv": 0.00258326571703551,
+      "hardening": 1174590.6921811649
+    }
+  },
+  "silk": {
+    "source": {
+      "machine": "PC2",
+      "bending": "multi_material_synced_20261105/63_Silk/bending/63_Silk/orthotropic/training/best.json",
+      "shear": "multi_material_synced_20261105/63_Silk/shear6/best.npz"
+    },
+    "best_label": "latest_joint_best",
+    "bending": {
+      "kb_warp": 248.69379488752313,
+      "friction_warp": 0.15779420461129587,
+      "thres_warp": 0.05472447079197314,
+      "hardening_warp": 50.00000000000001,
+      "yield_warp": 100,
+      "kb_weft": 137.13971192588932,
+      "friction_weft": 0.8417065433591449,
+      "thres_weft": 0.0416508866038115,
+      "hardening_weft": 50.00000000000001,
+      "yield_weft": 100
+    },
+    "stretch_shear": {
+      "warp": 2333543.1573,
+      "weft": 1794466.065,
+      "density": 410,
+      "thickness": 0.0003,
+      "k33_0": 25364.52502568122,
+      "k33_1": 24971.710597976613,
+      "friction": 167369.0520143669,
+      "thres": 0.0014460491113802985,
+      "yield_uv": 0.020019437770867027,
+      "hardening": 70260.40842389643
+    }
+  }
+}
