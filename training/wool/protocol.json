@@ -1,0 +1,703 @@
+{
+  "initial": {
+    "kb_warp": 250.22547304052532,
+    "friction_warp": 133.8247598520506,
+    "thres_warp": 0.06754895857348552,
+    "hardening_warp": 50.00000000000001,
+    "yield_warp": 100.0,
+    "kb_weft": 223.69847488496245,
+    "friction_weft": 79.87759890110478,
+    "thres_weft": 0.06077410586781166,
+    "hardening_weft": 50.00000000000001,
+    "yield_weft": 100.0
+  },
+  "active": [
+    "kb_warp",
+    "kb_weft",
+    "friction_warp",
+    "friction_weft",
+    "hardening_warp",
+    "hardening_weft",
+    "yield_warp",
+    "yield_weft",
+    "thres_warp",
+    "thres_weft"
+  ],
+  "learning_rates_U": [
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.002,
+    0.002
+  ],
+  "frames": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150
+  ],
+  "forward_end_frame": 150,
+  "solver": [
+    0.005,
+    0.0001
+  ],
+  "contact": true,
+  "soft_constraint": 200,
+  "epochs": 100,
+  "min_epochs": 30,
+  "patience": 20,
+  "relative_improvement": 0.001,
+  "parameterization": "P=U^2; ten independent coordinates; fresh Adam; no extra LR hook",
+  "fresh_process_per_direction": true,
+  "serial_directions": true,
+  "initial_source": "direction-specific full-model isotropic bests, from saved NPZ",
+  "plasticity": "inactive; yield=100 and hardening=50 fixed in both directions",
+  "input_sha256": {
+    "61_Wool_warp_compression.npy": "dbdd46b6e337edb580bd87a34218ae6bde76a8db367e11fbb94f9efac09cf1b2",
+    "61_Wool_warp_twist.npy": "1936e227e81ff6a2b9fe31af2c6b89e5b37d845b99d8bc2f16110f888c61a5b0",
+    "61_Wool_weft_compression.npy": "9d19032807ae9ecaba68bdc7bea441db64ef4dc7378c7b905a869516bf5bac76"
+  },
+  "mesh_sha256": {
+    "shear": "111431cd70362102d8961c05919f803c01f222e5d89e1577044800aa6b773b78",
+    "bending": "63a42b78dfea27765e5086e2f69be31fa380fd9216a8ccf841c42b3b1647beb7"
+  },
+  "python_bending_history_autograd": true,
+  "cuda_bending_history_gradient": false,
+  "isotropic_stages": {
+    "warp3": {
+      "fabric": "61_Wool",
+      "direction": "warp",
+      "normal_reference": "initial geometric Guu/Gvv",
+      "frames": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70
+      ],
+      "initial_bending": {
+        "kb": 600.0,
+        "friction": 400.0,
+        "thres": 0.1,
+        "hardening": 50.0,
+        "yield": 100.0
+      },
+      "material": {
+        "warp": 3368709.2254,
+        "weft": 2448119.559,
+        "density": 590,
+        "thickness": 0.0003,
+        "k33_0": 236633.21787943662,
+        "k33_1": 1370382.7490411499,
+        "friction": 310143.15690572525,
+        "thres": 100.0,
+        "yield_uv": 100.0,
+        "hardening": 1174590.6921811649
+      },
+      "shear_threshold": 100.0,
+      "shear_yield": 100.0,
+      "config": {
+        "cfl": {
+          "enable": false
+        },
+        "collision_detection": {
+          "method": "linear_bvh"
+        },
+        "contact": {
+          "constitution": "ipc",
+          "d_hat": 0.0003,
+          "enable": false,
+          "eps_velocity": 0.01,
+          "friction": {
+            "enable": true
+          }
+        },
+        "diff_sim": {
+          "enable": false
+        },
+        "dt": 0.01,
+        "extras": {
+          "debug": {
+            "dump_surface": false
+          },
+          "strict_mode": {
+            "enable": false
+          }
+        },
+        "gravity": [
+          [
+            0.0
+          ],
+          [
+            -9.8
+          ],
+          [
+            0.0
+          ]
+        ],
+        "line_search": {
+          "max_iter": 8,
+          "report_energy": false
+        },
+        "linear_system": {
+          "solver": "linear_pcg",
+          "tol_rate": 0.0001
+        },
+        "newton": {
+          "ccd_tol": 1.0,
+          "max_iter": 1024,
+          "use_adaptive_tol": false,
+          "velocity_tol": 0.005
+        },
+        "recovery": {},
+        "sanity_check": {
+          "enable": true,
+          "mode": "normal"
+        }
+      },
+      "learning_rates_U": [
+        0.3,
+        0.3,
+        0.002
+      ],
+      "parameterization": "P=U^2",
+      "post_step_scaling": true,
+      "data_shape": [
+        2,
+        500
+      ],
+      "compression_distance_m": 0.01634248,
+      "no_tare_shift": true,
+      "early_stop": "minimum 30 epochs; 20 without cumulative 0.1% improvement",
+      "max_epochs": 100
+    },
+    "warp5": {
+      "fabric": "61_Wool",
+      "direction": "warp",
+      "normal_reference": "initial geometric Guu/Gvv",
+      "frames": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "initial_bending": {
+        "kb": 367.9616978875448,
+        "friction": 223.6962494416925,
+        "thres": 0.07985588214145839,
+        "hardening": 50.0,
+        "yield": 100.0
+      },
+      "material": {
+        "warp": 3368709.2254,
+        "weft": 2448119.559,
+        "density": 590,
+        "thickness": 0.0003,
+        "k33_0": 236633.21787943662,
+        "k33_1": 1370382.7490411499,
+        "friction": 310143.15690572525,
+        "thres": 100.0,
+        "yield_uv": 100.0,
+        "hardening": 1174590.6921811649
+      },
+      "shear_threshold": 100.0,
+      "shear_yield": 100.0,
+      "config": {
+        "cfl": {
+          "enable": false
+        },
+        "collision_detection": {
+          "method": "linear_bvh"
+        },
+        "contact": {
+          "constitution": "ipc",
+          "d_hat": 0.0003,
+          "enable": false,
+          "eps_velocity": 0.01,
+          "friction": {
+            "enable": true
+          }
+        },
+        "diff_sim": {
+          "enable": false
+        },
+        "dt": 0.01,
+        "extras": {
+          "debug": {
+            "dump_surface": false
+          },
+          "strict_mode": {
+            "enable": false
+          }
+        },
+        "gravity": [
+          [
+            0.0
+          ],
+          [
+            -9.8
+          ],
+          [
+            0.0
+          ]
+        ],
+        "line_search": {
+          "max_iter": 8,
+          "report_energy": false
+        },
+        "linear_system": {
+          "solver": "linear_pcg",
+          "tol_rate": 0.0001
+        },
+        "newton": {
+          "ccd_tol": 1.0,
+          "max_iter": 1024,
+          "use_adaptive_tol": false,
+          "velocity_tol": 0.005
+        },
+        "recovery": {},
+        "sanity_check": {
+          "enable": true,
+          "mode": "normal"
+        }
+      },
+      "learning_rates_U": [
+        0.3,
+        0.3,
+        0.002,
+        0.0,
+        0.0
+      ],
+      "parameterization": "P=U^2",
+      "post_step_scaling": true,
+      "data_shape": [
+        2,
+        500
+      ],
+      "compression_distance_m": 0.01634248,
+      "no_tare_shift": true,
+      "early_stop": "minimum 30 epochs; 20 without cumulative 0.1% improvement",
+      "max_epochs": 100
+    },
+    "weft5": {
+      "fabric": "61_Wool",
+      "direction": "weft",
+      "normal_reference": "initial geometric Guu/Gvv",
+      "frames": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "initial_bending": {
+        "kb": 250.22547304052532,
+        "friction": 133.8247598520506,
+        "thres": 0.06754895857348552,
+        "hardening": 50.00000000000001,
+        "yield": 100.0
+      },
+      "material": {
+        "warp": 3368709.2254,
+        "weft": 2448119.559,
+        "density": 590,
+        "thickness": 0.0003,
+        "k33_0": 236633.21787943662,
+        "k33_1": 1370382.7490411499,
+        "friction": 310143.15690572525,
+        "thres": 100.0,
+        "yield_uv": 100.0,
+        "hardening": 1174590.6921811649
+      },
+      "shear_threshold": 100.0,
+      "shear_yield": 100.0,
+      "config": {
+        "cfl": {
+          "enable": false
+        },
+        "collision_detection": {
+          "method": "linear_bvh"
+        },
+        "contact": {
+          "constitution": "ipc",
+          "d_hat": 0.0003,
+          "enable": false,
+          "eps_velocity": 0.01,
+          "friction": {
+            "enable": true
+          }
+        },
+        "diff_sim": {
+          "enable": false
+        },
+        "dt": 0.01,
+        "extras": {
+          "debug": {
+            "dump_surface": false
+          },
+          "strict_mode": {
+            "enable": false
+          }
+        },
+        "gravity": [
+          [
+            0.0
+          ],
+          [
+            -9.8
+          ],
+          [
+            0.0
+          ]
+        ],
+        "line_search": {
+          "max_iter": 8,
+          "report_energy": false
+        },
+        "linear_system": {
+          "solver": "linear_pcg",
+          "tol_rate": 0.0001
+        },
+        "newton": {
+          "ccd_tol": 1.0,
+          "max_iter": 1024,
+          "use_adaptive_tol": false,
+          "velocity_tol": 0.005
+        },
+        "recovery": {},
+        "sanity_check": {
+          "enable": true,
+          "mode": "normal"
+        }
+      },
+      "learning_rates_U": [
+        0.3,
+        0.3,
+        0.002,
+        0.0,
+        0.0
+      ],
+      "parameterization": "P=U^2",
+      "post_step_scaling": true,
+      "data_shape": [
+        2,
+        500
+      ],
+      "compression_distance_m": 0.016065403333333332,
+      "no_tare_shift": true,
+      "early_stop": "minimum 30 epochs; 20 without cumulative 0.1% improvement",
+      "max_epochs": 100
+    }
+  },
+  "shear": {
+    "case": {
+      "fabric": "61_Wool",
+      "active_count": 6,
+      "material": {
+        "warp": 3368709.2254,
+        "weft": 2448119.559,
+        "k33_0": 100000.0,
+        "k33_1": 100000.0,
+        "friction_k33": 100000.0,
+        "thres_uv": 0.001,
+        "yield_uv": 0.02,
+        "hardening_k33": 70000.0,
+        "density": 590,
+        "thickness": 0.0003
+      },
+      "initial": [
+        100000.0,
+        100000.0,
+        100000.0,
+        0.001,
+        0.002,
+        70000.0
+      ],
+      "training_frames": [
+        0,
+        60
+      ],
+      "yield_uv_bounds": [
+        0.0,
+        0.02842
+      ]
+    },
+    "stages": [
+      {
+        "name": "stage1",
+        "frames": [
+          0,
+          40
+        ],
+        "active_count": 5
+      },
+      {
+        "name": "stage2",
+        "frames": [
+          0,
+          60
+        ],
+        "active_count": 6
+      }
+    ],
+    "initial_yield_fixed_stage1": 0.002,
+    "max_epochs": 500,
+    "learning_rate": 0.02,
+    "solver": [
+      0.05,
+      0.001
+    ],
+    "collision": false,
+    "history_gradient": false,
+    "early_stopping": {
+      "rolling_median": 5,
+      "min_epochs": 30,
+      "patience": 20,
+      "relative_improvement": 0.001
+    }
+  }
+}

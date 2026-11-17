@@ -1,0 +1,16 @@
+{
+  "epoch": 98,
+  "loss": 0.0023187910432431536,
+  "parameters": {
+    "kb_warp": 203.45372204428034,
+    "friction_warp": 257.08394244759495,
+    "thres_warp": 0.2323872248860127,
+    "hardening_warp": 50.00000000000001,
+    "yield_warp": 100.0,
+    "kb_weft": 60.84015329748116,
+    "friction_weft": 230.2581463677068,
+    "thres_weft": 0.2524666269246345,
+    "hardening_weft": 50.00000000000001,
+    "yield_weft": 100.0
+  }
+}

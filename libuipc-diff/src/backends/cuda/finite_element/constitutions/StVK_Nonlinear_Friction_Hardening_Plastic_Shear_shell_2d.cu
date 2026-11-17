@@ -1995,8 +1995,8 @@ class DiffNonlinearFrictionHardeningPlasticStVKShell2D : public Codim2DConstitut
                         Dv.block<3, 3>(3, 0) = dm_inv(0, 1) * Matrix3x3::Identity();
                         Dv.block<3, 3>(6, 0) = dm_inv(1, 1) * Matrix3x3::Identity();
 
-                        // Guv=.5*Fu.dot(Fv); the old expression was twice its derivative.
-                        Vector9 fuv = 0.5 * (Du * F.col(1) + Dv * F.col(0));
+                        // Twice dGuv/dx, matching W_shear=k*(Guv-p)^2+kf*(Guv-a)^2.
+                        Vector9 fuv = Du * F.col(1) + Dv * F.col(0);
 
                         Float Vdt2 = rest_area * thickness * dt * dt;
 
@@ -2101,8 +2101,8 @@ class DiffNonlinearFrictionHardeningPlasticStVKShell2D : public Codim2DConstitut
                         Dv.block<3, 3>(3, 0) = dm_inv(0, 1) * Matrix3x3::Identity();
                         Dv.block<3, 3>(6, 0) = dm_inv(1, 1) * Matrix3x3::Identity();
 
-                        // Guv=.5*Fu.dot(Fv); the old expression was twice its derivative.
-                        Vector9 fuv = 0.5 * (Du * F.col(1) + Dv * F.col(0));
+                        // Twice dGuv/dx, matching W_shear=k*(Guv-p)^2+kf*(Guv-a)^2.
+                        Vector9 fuv = Du * F.col(1) + Dv * F.col(0);
 
                         Float Vdt2 = rest_area * thickness * dt * dt;
 
@@ -2110,7 +2110,7 @@ class DiffNonlinearFrictionHardeningPlasticStVKShell2D : public Codim2DConstitut
                         elastic_strain_uv = G(0, 1) - plastic_uvs(tri_idx);
 
                         Vector9 pGpk33_1;
-                        // d/dk33_1 of dW/dGuv, for W=.5*(k0+k1*abs(q))*z^2.
+                        // The factor of two in dW/dq is included in fuv.
                         pGpk33_1 = (abs(G(0, 1)) * elastic_strain_uv
                                     + 0.5 * sym::stvk_nonlinear_friction_hardening_plastic_shear_2d::sign<Float>(G(0, 1)) * elastic_strain_uv * elastic_strain_uv)
                                    * fuv * Vdt2;
@@ -2212,8 +2212,8 @@ class DiffNonlinearFrictionHardeningPlasticStVKShell2D : public Codim2DConstitut
                         Dv.block<3, 3>(3, 0) = dm_inv(0, 1) * Matrix3x3::Identity();
                         Dv.block<3, 3>(6, 0) = dm_inv(1, 1) * Matrix3x3::Identity();
 
-                        // Guv=.5*Fu.dot(Fv); the old expression was twice its derivative.
-                        Vector9 fuv = 0.5 * (Du * F.col(1) + Dv * F.col(0));
+                        // Twice dGuv/dx, matching W_shear=k*(Guv-p)^2+kf*(Guv-a)^2.
+                        Vector9 fuv = Du * F.col(1) + Dv * F.col(0);
 
                         Float friction_var_strain_uv;
                         friction_var_strain_uv = G(0, 1) - anchor_uvs(tri_idx);
@@ -2330,8 +2330,8 @@ class DiffNonlinearFrictionHardeningPlasticStVKShell2D : public Codim2DConstitut
                         Dv.block<3, 3>(3, 0) = dm_inv(0, 1) * Matrix3x3::Identity();
                         Dv.block<3, 3>(6, 0) = dm_inv(1, 1) * Matrix3x3::Identity();
 
-                        // Guv=.5*Fu.dot(Fv); the old expression was twice its derivative.
-                        Vector9 fuv = 0.5 * (Du * F.col(1) + Dv * F.col(0));
+                        // Twice dGuv/dx, matching W_shear=k*(Guv-p)^2+kf*(Guv-a)^2.
+                        Vector9 fuv = Du * F.col(1) + Dv * F.col(0);
 
                         Float d_anchor_uv_d_thres_uv = d_anchor_uv_d_thres_uvs(tri_idx);
 
@@ -2467,8 +2467,8 @@ class DiffNonlinearFrictionHardeningPlasticStVKShell2D : public Codim2DConstitut
                         Dv.block<3, 3>(3, 0) = dm_inv(0, 1) * Matrix3x3::Identity();
                         Dv.block<3, 3>(6, 0) = dm_inv(1, 1) * Matrix3x3::Identity();
 
-                        // Guv=.5*Fu.dot(Fv); the old expression was twice its derivative.
-                        Vector9 fuv = 0.5 * (Du * F.col(1) + Dv * F.col(0));
+                        // Twice dGuv/dx, matching W_shear=k*(Guv-p)^2+kf*(Guv-a)^2.
+                        Vector9 fuv = Du * F.col(1) + Dv * F.col(0);
 
                         Float Vdt2 = rest_area * thickness * dt * dt;
 
@@ -2586,8 +2586,8 @@ class DiffNonlinearFrictionHardeningPlasticStVKShell2D : public Codim2DConstitut
                         Dv.block<3, 3>(3, 0) = dm_inv(0, 1) * Matrix3x3::Identity();
                         Dv.block<3, 3>(6, 0) = dm_inv(1, 1) * Matrix3x3::Identity();
 
-                        // Guv=.5*Fu.dot(Fv); the old expression was twice its derivative.
-                        Vector9 fuv = 0.5 * (Du * F.col(1) + Dv * F.col(0));
+                        // Twice dGuv/dx, matching W_shear=k*(Guv-p)^2+kf*(Guv-a)^2.
+                        Vector9 fuv = Du * F.col(1) + Dv * F.col(0);
 
                         Float Vdt2 = rest_area * thickness * dt * dt;
 

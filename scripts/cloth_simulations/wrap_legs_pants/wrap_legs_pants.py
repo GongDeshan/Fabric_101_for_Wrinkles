@@ -60,7 +60,6 @@ def main():
         bending[backend+'_warp'] = p[physical+'_'+u]
         bending[backend+'_weft'] = p[physical+'_'+v]
     print('MESH_AUDIT',json.dumps(audit),flush=True)
-    print('PARAMETER_SOURCE',record['source'],flush=True)
     print('PHYSICAL_BENDING',json.dumps(p),flush=True)
     print('BACKEND_BENDING',json.dumps(bending),flush=True)
     if audit['shared_edges_with_uv_direction_disagreement']:

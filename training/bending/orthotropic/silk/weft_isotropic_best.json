@@ -1,0 +1,12 @@
+{
+  "direction": "weft",
+  "date": "2026-11-14",
+  "source_stage": "weft5",
+  "parameters": {
+    "kb": 103.94249837582166,
+    "friction": 210.434854086337,
+    "thres": 0.10378181185594672,
+    "hardening": 50.00000000000001,
+    "yield": 100.0
+  }
+}

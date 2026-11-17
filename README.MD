@@ -258,187 +258,62 @@ Compilation succeeded with the CUDA/MSVC combinations listed in the table.
 
 ## Parameter training
 
-After installing the backend, install the frontend dependencies in the same
-Python environment:
+Install the CUDA backend and the Python dependencies in the same environment:
 
 ```powershell
 python -m pip install numpy torch polyscope matplotlib
 ```
 
-The training scripts open a Polyscope window. Select the data, set the material
-properties and optimizer settings, click **Apply settings and reset**, then
-**optim**. The exact reset-button label varies by workflow.
-
-The window shows loss, parameters, epoch time, and predicted curves against
-ground truth (GT). Select historical epochs to compare curves.
-**Pause optimization** pauses between epochs.
-
-**Save training records** is on by default; turning it off makes the panel dark
-red. Bending best parameters are saved even when detailed logging is off.
-GUI records do not include Adam state for resuming training.
-
-Density inputs use **kg/m^3** and thickness inputs use **m**. Convert catalog
-areal density to volumetric density using
-`density = areal_density_g_m2 / (1000 * thickness_m)`.
-
-### Stretch
-
-From the repository root:
+From the repository root, use `python training/train.py --fabric <material> --stage <stage>`.
+Choose `cotton`, `linen`, `wool`, `pet`, or `silk` as the material.
 
 ```powershell
-cd training/stretch
-python stretch_model.py
+python training/train.py --fabric cotton --stage stretch --direction warp
+python training/train.py --fabric cotton --stage shear
+python training/train.py --fabric cotton --stage bending
+python training/train.py --fabric cotton --stage joint
 ```
 
-This fits the axial stretching stiffness (`K22` in simulation coordinates).
-The default target is Cotton weft. Choose a supplied dataset or enter a custom
-NumPy path, then set density, thickness, initial stiffness, learning rate, and
-epoch limit. Enter density and thickness for the selected material.
+Use `--direction weft` for the other stretch direction. For Cotton and Linen,
+fit stretch and shear first, then fit isotropic bending with those values
+fixed. Load the saved isotropic run in the joint panel.
 
-The target array must have shape `(2, 31)`: 31 uniformly spaced, strictly
-increasing displacements in mm, starting at zero, and corresponding forces in N.
-The simulation performs 30 steps over that displacement range.
-
-Adam optimizes `U`, with physical stiffness `P = U^2`. The learning rate therefore
-controls the update in `U`. **Run & Stop** runs a forward simulation.
-
-Records are saved to `training/stretch/logs/gui_training_<timestamp>/`, including
-settings, per-epoch loss and curves, `best_result.npz`, and a summary. When saving
-is off, those epochs are omitted. 
-
-### Shear
-
-The shear model uses the original imposed-angle stiffness correction in Python.
-Run `python train.py` from `training/shear`. Training uses two stages:
-
-| Stage | Loss frames (inclusive) | Trainable parameters |
-| --- | --- | --- |
-| 1 | 0–40 | `k33_0`, `k33_1`, friction stiffness, threshold |
-| 2 | 0–60 | All six, including hardening and yield |
-
-Targets require at least 61 angle/torque samples, following
-`0 -> 5 -> 0 -> 5` degrees over the first 61 samples (20 steps per branch).
-
-Stage 2 starts from the stage-1 best parameters and resets Adam. Set learning
-rates and epoch limits in the panel. Each stage runs for up to 500 epochs, with
-plateau early stopping.
-
-Batch example, from `training/shear`:
-
-```powershell
-python train.py --headless-train --fabric 59_Cotton --direction warp --epochs 500
-```
-
-The epoch limit applies to each stage. Records are stored under
-`logs/gui_staged_<timestamp>/stage1` and `stage2`. The stage-2 best parameters are
-restored at completion. 
-
-### Isotropic bending
-
-From the repository root:
-
-```powershell
-cd training/bending/isotropic
-python train.py
-```
-
-This compression workflow uses the supplied slit mesh and fixed stretching/shear
-parameters. **Activate bending plasticity (isotropic)** is on by default.
-With plasticity on, training proceeds as follows:
-
-| Stage | Initialization | Trainable parameters | Loss frames (inclusive) |
-| --- | --- | --- | --- |
-| 1: warp | Configured initial values | Stiffness, friction stiffness, threshold | 30–70 |
-| 2: warp | Stage-1 best; reset Adam | All five, including hardening and yield | 30–70 and 120–150 |
-| 3: weft | Stage-2 warp best; reset Adam | All five | 30–70 and 120–150 |
-
-With plasticity off, all stages optimize only the first three parameters;
-hardening is fixed at 50 and yield at 100. The selected mode is saved with the
-best parameters for orthotropic initialization.
-
-Stages 2 and 3 simulate continuously to frame 150 and evaluate loss on the 72
-selected frames. Set initial parameters, individual learning rates, solver
-tolerances, and collision options in the panel. Each stage runs for up to 100
-epochs, with plateau early stopping. Shear sliding and plasticity are inactive.
-
-Records are saved under `logs/gui_bending_<timestamp>/`. Best parameters and
-curves are saved after each improved forward evaluation, including when detailed
-logging is off. Interrupted runs retain their previously saved bests. Keep the
-entire run folder for orthotropic training.
-
-Batch examples, from the isotropic folder:
-
-```powershell
-python train.py --headless-train --fabric 59_Cotton --epochs 500
-python train.py --headless-train --fabric 59_Cotton --epochs 500 --no-plastic
-```
-
-The epoch limit applies to each stage. 
-
-### Orthotropic joint bending
-
-Complete the isotropic warp and weft stages first. From the repository root:
-
-```powershell
-cd training/bending/orthotropic
-python train.py
-```
-
-Enter the isotropic run folder and click **Load isotropic warp and weft bests**.
-Both best records must come from the same run, with the same plasticity setting.
-Keep `run_manifest.json` and its referenced best files together. The original
-target data and matching mesh must remain available.
-Missing, incompatible, or damaged records produce an error.
-
-Plasticity follows the isotropic log: when on, all ten directional parameters
-are optimized; when off, only six stiffness/friction parameters are optimized,
-with hardening fixed at 50 and yield at 100 in both directions.
-
-Training minimizes the mean warp/weft MSE using frames 30–70 and 120–150,
-with up to 100 epochs and plateau early stopping. Set individual learning rates
-and solver options in the panel. Collision is on by default, and additional
-history gradients are off.
-
-Results are saved under `logs/gui_joint_<timestamp>/`. Best paired parameters
-and curves are saved even when detailed logging is off. Closing the window
-also stops its simulation processes.
-
-Batch example, from the orthotropic folder:
-
-```powershell
-python train.py --headless-train --isotropic-run "<isotropic run folder>" --epochs 500
-```
+For Wool, `shear` runs the staged warp fit and `bending` runs the full
+no-bending-plasticity workflow using the archived shear fit. For PET and Silk,
+`bending` runs the joint fit from the bundled isotropic bests. Their training
+settings and reference fits are included with the scripts.
 
 ## Fitted material parameters
 
-### Cotton and Linen
+### Cotton, Linen, Wool, PET, and Silk
 
-These are the Cotton and Linen parameter sets used in the Sit on Shirt simulation.
+| Parameter | Cotton | Linen | Wool | PET | Silk |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Density (kg/m3) | 430 | 503 | 590 | 1000 | 410 |
+| Thickness (mm) | 0.40 | 0.30 | 0.30 | 0.10 | 0.30 |
+| Warp stretch stiffness (Pa) | 5753754.3771 | 7268873.8665 | 3368709.2254 | 7131122.6556 | 2333543.1573 |
+| Weft stretch stiffness (Pa) | 1229799.9644 | 4894094.1377 | 2448119.5590 | 11186885.7799 | 1794466.0650 |
+| Shear stiffness coefficient k33_0 (Pa) | 418811.2270 | 42933.8220 | 236633.2179 | 227048.7928 | 25364.5250 |
+| Shear stiffness coefficient k33_1 (Pa) | 449440.2107 | 51143.0707 | 1370382.7490 | 327524.7409 | 24971.7106 |
+| Shear friction stiffness (Pa) | 607111.0712 | 197314.8504 | 310143.1569 | 666146.0542 | 167369.0520 |
+| Shear friction threshold | 0.005315771 | 0.001399683 | 0.003679236 | 0.005004784 | 0.001446049 |
+| Shear yield strain | 0.022090133 | 0.021238335 | 0.002583266 | 0.020459324 | 0.020019438 |
+| Shear plastic hardening (Pa) | 108828.1354 | 89593.0812 | 1174590.6922 | 76694.0874 | 70260.4084 |
 
-Stretch and shear stiffness coefficients are in Pa. Shear thresholds and yield
-strains are dimensionless.
+Orthotropic bending inputs are listed by physical fabric direction.
 
-| Parameter | Cotton | Linen |
-| --- | ---: | ---: |
-| Warp stretch stiffness | 5753754.3771 | 7268873.8665 |
-| Weft stretch stiffness | 1229799.9644 | 4894094.1377 |
-| Shear stiffness coefficient k33_0 | 418811.2270 | 42933.8220 |
-| Shear stiffness coefficient k33_1 | 449440.2107 | 51143.0707 |
-| Shear friction stiffness | 607111.0712 | 197314.8504 |
-| Shear friction threshold | 0.005315771 | 0.001399683 |
-| Shear yield strain | 0.022090133 | 0.021238335 |
-| Shear plastic hardening | 108828.1354 | 89593.0812 |
-
-Orthotropic bending coefficients are listed as simulator inputs in the physical
-warp and weft directions. The friction threshold and yield angle are in radians.
-
-| Parameter | Cotton warp | Cotton weft | Linen warp | Linen weft |
-| --- | ---: | ---: | ---: | ---: |
-| Bending stiffness | 488.9805 | 187.8062 | 1165.1620 | 606.2312 |
-| Bending friction stiffness | 540.7861 | 155.8220 | 1043.0364 | 613.8104 |
-| Bending friction threshold | 0.098170933 | 0.062618447 | 0.155133893 | 0.124392230 |
-| Bending plastic hardening | 52.0413 | 21.8654 | 44.3990 | 12.1666 |
-| Bending yield angle | 1.008076516 | 0.952237515 | 0.991530028 | 0.925513305 |
+| Material | Direction | Bending stiffness | Friction stiffness | Friction threshold (rad) | Plastic hardening | Yield angle (rad) |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Cotton | Warp | 488.9805 | 540.7861 | 0.098170933 | 52.0413 | 1.008076516 |
+| Cotton | Weft | 187.8062 | 155.8220 | 0.062618447 | 21.8654 | 0.952237515 |
+| Linen | Warp | 1165.1620 | 1043.0364 | 0.155133893 | 44.3990 | 0.991530028 |
+| Linen | Weft | 606.2312 | 613.8104 | 0.124392230 | 12.1666 | 0.925513305 |
+| Wool | Warp | 370.7885 | 118.0779 | 0.077464770 | 50 | 3.15 |
+| Wool | Weft | 170.8004 | 41.7732 | 0.055399366 | 50 | 3.15 |
+| PET | Warp | 2743.8785 | 2852.9286 | 0.291435259 | 89.3376 | 2.179243428 |
+| PET | Weft | 499.9323 | 624.1867 | 0.125999176 | 50 | 3.15 |
+| Silk | Warp | 203.4537 | 257.0839 | 0.232387225 | 50 | 3.15 |
+| Silk | Weft | 60.8402 | 230.2581 | 0.252466627 | 50 | 3.15 |
 
 ### Paper
 
@@ -489,8 +364,6 @@ Density is 203 kg/m³ and thickness is 0.30 mm.
 
 ## Simulation
 
-Run the commands below from the repository root. The scenes load their bundled meshes and motion data.
-
 ### Cloth simulations
 
 | Sit on Shirt | Washing Cloth | Sit with Pants | Wrap Legs Pants |
@@ -522,12 +395,12 @@ The scenes use the fitted Paper parameters. In Polyscope, **Run & Stop** starts 
 
 #### Fold and throw an airplane
 
-Run either command and click **Play** in Polyscope. The wind scenes require the bundled backend with TriangleWind.
+Run either command and click **Play** in Polyscope.
 
 | Material | Command |
 |---|---|
-| Paper | `python scripts/paper_simulations/fold_throw_paper_plane_tailwind_copy.py` |
-| Cotton | `python scripts/paper_simulations/fold_throw_cotton_plane_tailwind_copy.py` |
+| Paper | `python scripts/paper_simulations/fold_throw_paper_plane.py` |
+| Cotton | `python scripts/paper_simulations/fold_throw_cotton_plane.py` |
 
 ### Cusick drape
 

@@ -101,11 +101,11 @@ def configured_scene(source, setup):
     return ast.fix_missing_locations(tree)
 
 
-def run_scene_window(model_path):
+def run_scene_window(model_path, initial_setup=None):
     """Rebuild the complete backend when physical constants change, reusing the GUI."""
     model = Path(model_path).resolve()
     source = model.read_text(encoding='utf-8-sig')
-    setup = {}
+    setup = dict(initial_setup or {})
     ps.init()
     while True:
         env = dict(__name__='__main__', __file__=str(model),

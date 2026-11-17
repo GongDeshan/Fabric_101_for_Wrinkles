@@ -59,7 +59,6 @@ def main():
     assert body_offset(120,1.) == -1. and body_offset(170,1.) == 0.
     assert lift_fraction(170) == 0. and lift_fraction(220) == 1.
     print('MESH_AUDIT',json.dumps(audit),flush=True)
-    print('PARAMETER_SOURCE',parameter_record['source'],flush=True)
     print('PHYSICAL_BENDING',json.dumps(p),flush=True)
     print('BACKEND_BENDING',json.dumps(bending),flush=True)
     if audit['shared_edges_with_uv_direction_disagreement']:

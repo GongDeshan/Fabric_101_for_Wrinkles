@@ -41,7 +41,6 @@ os.makedirs(workspace, exist_ok=True)
 engine = Engine('cuda', workspace)
 world = World(engine)
 
-# Paper material fitted on PC2, 2026-11-08.
 MASS_DENSITY = 992.875
 THICKNESS = 0.00008
 

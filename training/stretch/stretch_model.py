@@ -23,7 +23,29 @@ from asset_dir import AssetDir
 
 if __name__ == '__main__' and not globals().get('_stretch_embedded_scene', False):
     from stretch_data_controls import run_scene_window
-    run_scene_window(__file__)
+    import argparse
+    import json
+    from pathlib import Path
+
+    model_path = Path(__file__).resolve()
+    presets = json.loads(
+        (model_path.parent.parent / 'bending' / 'isotropic' / 'materials.json').read_text(encoding='utf-8')
+    )
+    parser = argparse.ArgumentParser(description='Train axial stretch stiffness')
+    parser.add_argument('--fabric', choices=presets)
+    parser.add_argument('--direction', choices=('warp', 'weft'))
+    args = parser.parse_args()
+    setup = None
+    if args.fabric or args.direction:
+        fabric = args.fabric or '59_Cotton'
+        direction = args.direction or 'weft'
+        setup = dict(
+            tested_fabric_type=fabric,
+            sample_vertial_direction=direction,
+            MASS_DENSITY=presets[fabric]['density'],
+            THICKNESS=presets[fabric]['thickness'],
+        )
+    run_scene_window(model_path, initial_setup=setup)
     raise SystemExit(0)
 
 run_type = "init"

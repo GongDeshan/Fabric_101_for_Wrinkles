@@ -1,0 +1,15 @@
+{
+  "parameters": {
+    "kb_warp": 250.22547304052532,
+    "friction_warp": 133.8247598520506,
+    "thres_warp": 0.06754895857348552,
+    "hardening_warp": 50.00000000000001,
+    "yield_warp": 100.0,
+    "kb_weft": 223.69847488496245,
+    "friction_weft": 79.87759890110478,
+    "thres_weft": 0.06077410586781166,
+    "hardening_weft": 50.00000000000001,
+    "yield_weft": 100.0
+  },
+  "source": "this queue isotropic direction bests"
+}
